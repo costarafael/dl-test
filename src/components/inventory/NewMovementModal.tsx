@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Button, Label, TextInput, Select, Textarea, Table, Badge } from 'flowbite-react';
 import { PlusIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { TipoEPI, ItemEstoque, NovaMovimentacaoForm } from '../../types';
-import { createEntityLookup, createFieldLookup } from '../../utils/entityHelpers';
+import { createFieldLookup } from '../../utils/entityHelpers';
 
 interface NewMovementModalProps {
   show: boolean;
@@ -48,7 +48,6 @@ const NewMovementModal: React.FC<NewMovementModalProps> = ({
   });
 
   const getEstoque = createFieldLookup(estoque || [], 'tipoEPIId');
-  const getTipoEPI = createEntityLookup(tiposEPI || []);
 
   // Reset form when modal opens/closes
   useEffect(() => {

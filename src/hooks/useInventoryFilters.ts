@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { ItemEstoque, TipoEPI, Empresa } from '../types';
+import { ItemEstoque, TipoEPI } from '../types';
 import { calcularStatusEstoque } from '../utils/estoqueHelpers';
 import { createEntityLookup } from '../utils/entityHelpers';
 
@@ -93,8 +93,8 @@ export const useInventoryFilters = (
     return {
       totalItens: itensEstoque.length,
       totalDisponivel: itensEstoque.reduce((total, item) => total + item.quantidade, 0),
-      estoqueMinimo: itensEstoque.filter(item => calcularStatusEstoque(item) === 'baixo').length,
-      proximoVencimento: itensEstoque.filter(item => calcularStatusEstoque(item) === 'vencendo').length
+      estoqueMinimo: itensEstoque.filter(item => calcularStatusEstoque(item) === 'baixo_estoque').length,
+      proximoVencimento: itensEstoque.filter(item => calcularStatusEstoque(item) === 'vencido').length
     };
   }, [itensEstoque]);
   

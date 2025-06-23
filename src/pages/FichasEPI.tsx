@@ -6,15 +6,13 @@ import {
   Select,
   Label, 
   Table, 
-  Tooltip, 
-  Modal,
-  Avatar, 
+  Modal, 
   Badge,
   Pagination, 
   Dropdown 
 } from 'flowbite-react';
 import { 
-  MagnifyingGlassIcon, 
+ 
   EllipsisVerticalIcon, 
   UserPlusIcon, 
   EyeIcon,
@@ -23,8 +21,8 @@ import {
   FunnelIcon
 } from '@heroicons/react/24/outline';
 import SearchableDropdown from '../components/common/SearchableDropdown';
-import { FichaEPI, Colaborador, TipoEPI, Holding, Empresa } from '../types';
-import { fichasEPIAPI, colaboradoresAPI, empresasAPI, holdingsAPI, tiposEPIAPI } from '../services/api';
+import { FichaEPI, Colaborador, Empresa } from '../types';
+import { colaboradoresAPI, empresasAPI } from '../services/api';
 import { useFichasEPI, useAPI } from '../hooks/useAPI';
 import StatusIndicator from '../components/StatusIndicator';
 import { format } from 'date-fns';
@@ -37,10 +35,8 @@ const FichasEPIPage: React.FC = () => {
   const { fichas, loading, error, createFicha, loadFichas } = useFichasEPI();
   
   // Hooks para carregar dados da API
-  const { data: holdings, loading: loadingHoldings } = useAPI<Holding[]>(holdingsAPI.getAll);
   const { data: empresas, loading: loadingEmpresas } = useAPI<Empresa[]>(empresasAPI.getAll);
-  const { data: colaboradores, loading: loadingColaboradores } = useAPI<Colaborador[]>(colaboradoresAPI.getAll);
-  const { data: tiposEPI, loading: loadingTiposEPI } = useAPI<TipoEPI[]>(tiposEPIAPI.getAll);
+  const { data: colaboradores } = useAPI<Colaborador[]>(colaboradoresAPI.getAll);
   
   // Estados da aplicação
   const [showNovaFichaModal, setShowNovaFichaModal] = useState(false);
@@ -60,21 +56,12 @@ const FichasEPIPage: React.FC = () => {
     return empresas?.find(e => e.id === empresaId);
   };
   
-  const getHolding = (holdingId: string): Holding | undefined => {
-    return holdings?.find(h => h.id === holdingId);
-  };
   
-  const getEmpresasContratadas = (holdingId: string): Empresa[] => {
-    return empresas?.filter(e => e.tipo === 'contratada' && e.holdingId === holdingId) || [];
-  };
   
   const getColaboradoresEmpresa = (empresaId: string): Colaborador[] => {
     return colaboradores?.filter(c => c.empresaId === empresaId && c.status === 'ativo' && !c.temFichaAtiva) || [];
   };
 
-  const getTipoEPI = (tipoEPIId: string): TipoEPI | undefined => {
-    return tiposEPI?.find(t => t.id === tipoEPIId);
-  };
 
   const formatarData = (data: Date | string | null | undefined): string => {
     if (!data) return '';
@@ -116,7 +103,7 @@ const FichasEPIPage: React.FC = () => {
   };
 
   // Mostrar loading se estiver carregando
-  const isLoading = loading || loadingHoldings || loadingEmpresas || loadingColaboradores || loadingTiposEPI;
+  const isLoading = loading || loadingEmpresas;
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-64">

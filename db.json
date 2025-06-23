@@ -48,6 +48,56 @@
       "dataValidade": "2026-06-23T17:27:43.254Z",
       "status": "ativo",
       "itens": []
+    },
+    {
+      "id": "nova_1750702103430",
+      "colaboradorId": "1",
+      "empresaId": "1",
+      "dataEmissao": "2025-06-23T18:08:23.430Z",
+      "dataValidade": "2026-06-23T18:08:23.430Z",
+      "status": "ativo",
+      "itens": [
+        {
+          "id": "ficha_epi_1750702297002_yocj0",
+          "tipoEPIId": "epi_001",
+          "quantidade": 1,
+          "dataEntrega": "2025-06-23T18:11:54.502Z",
+          "dataValidade": "2026-06-23T03:00:00.000Z",
+          "status": "entregue",
+          "entregaId": "entrega_1750702314502",
+          "observacoes": "Entrega #entrega_1750702314502"
+        },
+        {
+          "id": "ficha_epi_1750702308628_g6oy8",
+          "tipoEPIId": "epi_002",
+          "quantidade": 1,
+          "dataEntrega": "2025-06-23T18:11:54.502Z",
+          "dataValidade": "2026-06-23T03:00:00.000Z",
+          "status": "entregue",
+          "entregaId": "entrega_1750702314502",
+          "observacoes": "Entrega #entrega_1750702314502"
+        },
+        {
+          "id": "ficha_epi_1750702459861_hu6rq",
+          "tipoEPIId": "epi_004",
+          "quantidade": 1,
+          "dataEntrega": "2025-06-23T18:14:58.883Z",
+          "dataValidade": "2026-06-23T03:00:00.000Z",
+          "status": "entregue",
+          "entregaId": "entrega_1750702498883",
+          "observacoes": "Entrega #entrega_1750702498883"
+        },
+        {
+          "id": "ficha_epi_1750702463468_a5y7c",
+          "tipoEPIId": "epi_003",
+          "quantidade": 6,
+          "dataEntrega": "2025-06-23T18:14:58.883Z",
+          "dataValidade": "2026-06-23T03:00:00.000Z",
+          "status": "entregue",
+          "entregaId": "entrega_1750702498883",
+          "observacoes": "Entrega #entrega_1750702498883"
+        }
+      ]
     }
   ],
   "entregas": [
@@ -84,6 +134,52 @@
       "status": "nao_assinado",
       "qrCode": "QR_1750678612452",
       "linkAssinatura": "https://app.datalife.com/assinatura/1750678612452"
+    },
+    {
+      "id": "entrega_1750702314502",
+      "fichaEPIId": "nova_1750702103430",
+      "dataEntrega": "2025-06-23T18:11:54.502Z",
+      "itens": [
+        {
+          "id": "epi_1750702297002_yocj0",
+          "tipoEPIId": "epi_001",
+          "quantidade": 1,
+          "dataValidade": "2026-06-23T03:00:00.000Z"
+        },
+        {
+          "id": "epi_1750702308628_g6oy8",
+          "tipoEPIId": "epi_002",
+          "quantidade": 1,
+          "dataValidade": "2026-06-23T03:00:00.000Z"
+        }
+      ],
+      "responsavel": "Supervisor EPI",
+      "status": "nao_assinado",
+      "qrCode": "QR_1750702314502",
+      "linkAssinatura": "https://app.datalife.com/assinatura/1750702314502"
+    },
+    {
+      "id": "entrega_1750702498883",
+      "fichaEPIId": "nova_1750702103430",
+      "dataEntrega": "2025-06-23T18:14:58.883Z",
+      "itens": [
+        {
+          "id": "epi_1750702459861_hu6rq",
+          "tipoEPIId": "epi_004",
+          "quantidade": 1,
+          "dataValidade": "2026-06-23T03:00:00.000Z"
+        },
+        {
+          "id": "epi_1750702463468_a5y7c",
+          "tipoEPIId": "epi_003",
+          "quantidade": 6,
+          "dataValidade": "2026-06-23T03:00:00.000Z"
+        }
+      ],
+      "responsavel": "Supervisor EPI",
+      "status": "nao_assinado",
+      "qrCode": "QR_1750702498883",
+      "linkAssinatura": "https://app.datalife.com/assinatura/1750702498883"
     }
   ],
   "estoque": [
@@ -91,7 +187,7 @@
       "id": "estoque_almox_epi_001",
       "tipoEPIId": "epi_001",
       "empresaId": "almoxarifado",
-      "quantidade": 50,
+      "quantidade": 29,
       "quantidadeMinima": 10,
       "localizacao": "Almoxarifado Central",
       "lote": "LOTE-001-2025",
@@ -111,7 +207,7 @@
       "id": "estoque_almox_epi_003",
       "tipoEPIId": "epi_003",
       "empresaId": "almoxarifado",
-      "quantidade": 100,
+      "quantidade": 94,
       "quantidadeMinima": 50,
       "localizacao": "Almoxarifado Central",
       "lote": "LOTE-003-2025",
@@ -121,7 +217,7 @@
       "id": "estoque_almox_epi_004",
       "tipoEPIId": "epi_004",
       "empresaId": "almoxarifado",
-      "quantidade": 200,
+      "quantidade": 199,
       "quantidadeMinima": 100,
       "localizacao": "Almoxarifado Central",
       "lote": "LOTE-004-2025",
@@ -131,7 +227,7 @@
       "id": "estoque_almox_epi_005",
       "tipoEPIId": "epi_005",
       "empresaId": "almoxarifado",
-      "quantidade": 39,
+      "quantidade": 40,
       "quantidadeMinima": 20,
       "localizacao": "Almoxarifado Central",
       "lote": "LOTE-005-2025",
@@ -156,6 +252,36 @@
       "localizacao": "Almoxarifado Central",
       "lote": "LOTE-1750675828432-rh1cn",
       "dataValidade": "2027-06-23"
+    },
+    {
+      "id": "estoque_1750702931593_tipo_1750702931580",
+      "tipoEPIId": "tipo_1750702931580",
+      "empresaId": "almoxarifado",
+      "quantidade": 0,
+      "quantidadeMinima": 10,
+      "localizacao": "Almoxarifado Central",
+      "lote": "LOTE-1750702931593-rs1ww",
+      "dataValidade": "2027-06-23"
+    },
+    {
+      "id": "estoque_1750704713206_tipo_1750704713192",
+      "tipoEPIId": "tipo_1750704713192",
+      "empresaId": "almoxarifado",
+      "quantidade": 0,
+      "quantidadeMinima": 10,
+      "localizacao": "Almoxarifado Central",
+      "lote": "LOTE-1750704713206-jexpb",
+      "dataValidade": "2027-06-23"
+    },
+    {
+      "id": "estoque_almox_tipo_1750704713192",
+      "tipoEPIId": "tipo_1750704713192",
+      "empresaId": "almoxarifado",
+      "quantidade": 10,
+      "quantidadeMinima": 10,
+      "localizacao": "Almoxarifado Central",
+      "lote": "LOTE-1750705089346",
+      "dataValidade": "2026-06-23"
     }
   ],
   "movimentacoesEstoque": [
@@ -184,6 +310,83 @@
       "data": "2025-06-23T11:36:52.474Z",
       "observacoes": "Entrega para João Silva Santos (1)",
       "entregaId": "entrega_1750678612452"
+    },
+    {
+      "id": "mov_1750702314528_tv99z",
+      "itemEstoqueId": "estoque_almox_epi_001",
+      "tipo": "entrega",
+      "quantidade": 1,
+      "quantidadeAnterior": 50,
+      "quantidadeAtual": 49,
+      "responsavelId": "Supervisor EPI",
+      "motivo": "Entrega para colaborador",
+      "data": "2025-06-23T18:11:54.528Z",
+      "observacoes": "Entrega para João Silva Santos (1)",
+      "entregaId": "entrega_1750702314502"
+    },
+    {
+      "id": "mov_1750702498919_paxct",
+      "itemEstoqueId": "estoque_almox_epi_004",
+      "tipo": "entrega",
+      "quantidade": 1,
+      "quantidadeAnterior": 200,
+      "quantidadeAtual": 199,
+      "responsavelId": "Supervisor EPI",
+      "motivo": "Entrega para colaborador",
+      "data": "2025-06-23T18:14:58.919Z",
+      "observacoes": "Entrega para João Silva Santos (1)",
+      "entregaId": "entrega_1750702498883"
+    },
+    {
+      "id": "mov_1750702498941_o54yk",
+      "itemEstoqueId": "estoque_almox_epi_003",
+      "tipo": "entrega",
+      "quantidade": 6,
+      "quantidadeAnterior": 100,
+      "quantidadeAtual": 94,
+      "responsavelId": "Supervisor EPI",
+      "motivo": "Entrega para colaborador",
+      "data": "2025-06-23T18:14:58.941Z",
+      "observacoes": "Entrega para João Silva Santos (1)",
+      "entregaId": "entrega_1750702498883"
+    },
+    {
+      "id": "mov_1750703127297_dod6f",
+      "itemEstoqueId": "estoque_almox_epi_001",
+      "tipo": "saida",
+      "quantidade": 20,
+      "quantidadeAnterior": 49,
+      "quantidadeAtual": 29,
+      "responsavelId": "Rafael",
+      "motivo": "Saída via Nota SAIDA-1750703127258",
+      "data": "2025-06-23T18:25:27.297Z",
+      "observacoes": "Processamento automático da nota de saída SAIDA-1750703127258 - Lixo"
+    },
+    {
+      "id": "mov_1750705089358_4ey4h",
+      "itemEstoqueId": "estoque_almox_tipo_1750704713192",
+      "tipo": "entrada",
+      "quantidade": 10,
+      "quantidadeAnterior": 0,
+      "quantidadeAtual": 10,
+      "responsavelId": "Rasdf",
+      "motivo": "Entrada via Nota ENTRADA-1750705089316",
+      "data": "2025-06-23T18:58:09.358Z",
+      "observacoes": "Processamento automático da nota de entrada ENTRADA-1750705089316",
+      "notaFiscal": "234234234"
+    },
+    {
+      "id": "mov_1750705089375_sqrqj",
+      "itemEstoqueId": "estoque_almox_epi_005",
+      "tipo": "entrada",
+      "quantidade": 1,
+      "quantidadeAnterior": 39,
+      "quantidadeAtual": 40,
+      "responsavelId": "Rasdf",
+      "motivo": "Entrada via Nota ENTRADA-1750705089316",
+      "data": "2025-06-23T18:58:09.375Z",
+      "observacoes": "Processamento automático da nota de entrada ENTRADA-1750705089316",
+      "notaFiscal": "234234234"
     }
   ],
   "historicoEstoque": [
@@ -262,6 +465,100 @@
         "empresaColaborador": "1"
       },
       "data": "2025-06-23T11:36:52.479Z"
+    },
+    {
+      "id": "hist_est_1750702314535_bwl22",
+      "itemEstoqueId": "estoque_almox_epi_001",
+      "tipo": "entrega",
+      "responsavel": "Supervisor EPI",
+      "descricao": "Saída por entrega - Capacete de Segurança Classe A",
+      "quantidadeAnterior": 50,
+      "quantidadeAtual": 49,
+      "quantidade": 1,
+      "detalhes": {
+        "motivo": "Entrega para colaborador",
+        "entregaId": "entrega_1750702314502",
+        "fichaEPIId": "nova_1750702103430",
+        "colaboradorNome": "João Silva Santos",
+        "empresaColaborador": "1"
+      },
+      "data": "2025-06-23T18:11:54.535Z"
+    },
+    {
+      "id": "hist_est_1750702498924_pcqyu",
+      "itemEstoqueId": "estoque_almox_epi_004",
+      "tipo": "entrega",
+      "responsavel": "Supervisor EPI",
+      "descricao": "Saída por entrega - Respirador PFF2",
+      "quantidadeAnterior": 200,
+      "quantidadeAtual": 199,
+      "quantidade": 1,
+      "detalhes": {
+        "motivo": "Entrega para colaborador",
+        "entregaId": "entrega_1750702498883",
+        "fichaEPIId": "nova_1750702103430",
+        "colaboradorNome": "João Silva Santos",
+        "empresaColaborador": "1"
+      },
+      "data": "2025-06-23T18:14:58.924Z"
+    },
+    {
+      "id": "hist_est_1750702498945_rtm0g",
+      "itemEstoqueId": "estoque_almox_epi_003",
+      "tipo": "entrega",
+      "responsavel": "Supervisor EPI",
+      "descricao": "Saída por entrega - Protetor Auricular Tipo Plug",
+      "quantidadeAnterior": 100,
+      "quantidadeAtual": 94,
+      "quantidade": 6,
+      "detalhes": {
+        "motivo": "Entrega para colaborador",
+        "entregaId": "entrega_1750702498883",
+        "fichaEPIId": "nova_1750702103430",
+        "colaboradorNome": "João Silva Santos",
+        "empresaColaborador": "1"
+      },
+      "data": "2025-06-23T18:14:58.945Z"
+    },
+    {
+      "id": "hist_est_1750702931601_6nhy6",
+      "itemEstoqueId": "estoque_1750702931593_tipo_1750702931580",
+      "tipo": "cadastro",
+      "responsavel": {
+        "categoria": "Proteção da Cabeça",
+        "fabricante": "IronHead",
+        "numeroCA": "1230412345",
+        "motivo": "Novo tipo EPI cadastrado",
+        "localizacao": "Almoxarifado Central"
+      },
+      "descricao": "Item de estoque criado - Capacete teste 00001",
+      "quantidadeAnterior": 0,
+      "quantidadeAtual": "Sistema",
+      "quantidade": "Sistema",
+      "detalhes": {
+        "motivo": "Cadastro inicial do item no sistema"
+      },
+      "data": "2025-06-23T18:22:11.601Z"
+    },
+    {
+      "id": "hist_est_1750704713215_utdnq",
+      "itemEstoqueId": "estoque_1750704713206_tipo_1750704713192",
+      "tipo": "cadastro",
+      "responsavel": {
+        "categoria": "Proteção dos Olhos e Face",
+        "fabricante": "Rayban",
+        "numeroCA": "09876",
+        "motivo": "Novo tipo EPI cadastrado",
+        "localizacao": "Almoxarifado Central"
+      },
+      "descricao": "Item de estoque criado - Oculos Rayban",
+      "quantidadeAnterior": 0,
+      "quantidadeAtual": "Sistema",
+      "quantidade": "Sistema",
+      "detalhes": {
+        "motivo": "Cadastro inicial do item no sistema"
+      },
+      "data": "2025-06-23T18:51:53.215Z"
     }
   ],
   "historico": [
@@ -356,6 +653,52 @@
       "responsavel": "Sistema EPI",
       "descricao": "Ficha de EPI criada para o colaborador Juliana Pereira Lima",
       "data": "2025-06-23T17:27:43.275Z"
+    },
+    {
+      "id": "hist_1750702103450_njqkf",
+      "fichaEPIId": "nova_1750702103430",
+      "tipo": "ficha_criada",
+      "responsavel": "Sistema EPI",
+      "descricao": "Ficha de EPI criada para o colaborador João Silva Santos",
+      "data": "2025-06-23T18:08:23.450Z"
+    },
+    {
+      "id": "hist_1750702314548_u326e",
+      "fichaEPIId": "nova_1750702103430",
+      "tipo": "entrega_criada",
+      "responsavel": "Supervisor EPI",
+      "descricao": "Entrega #entrega_1750702314502 criada com 2 item(ns)",
+      "data": "2025-06-23T18:11:54.548Z",
+      "detalhes": {
+        "entregaId": "entrega_1750702314502",
+        "equipamentos": [
+          "epi_001",
+          "epi_002"
+        ],
+        "quantidades": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "id": "hist_1750702498954_8b6v7",
+      "fichaEPIId": "nova_1750702103430",
+      "tipo": "entrega_criada",
+      "responsavel": "Supervisor EPI",
+      "descricao": "Entrega #entrega_1750702498883 criada com 2 item(ns)",
+      "data": "2025-06-23T18:14:58.954Z",
+      "detalhes": {
+        "entregaId": "entrega_1750702498883",
+        "equipamentos": [
+          "epi_004",
+          "epi_003"
+        ],
+        "quantidades": [
+          1,
+          6
+        ]
+      }
     }
   ],
   "notificacoes": [],
@@ -383,9 +726,65 @@
       "notaFiscal": "1123123",
       "valorTotal": 0,
       "dataProcessamento": "2025-06-23T17:43:43.579Z"
+    },
+    {
+      "id": "nota_entrada_1750705089316",
+      "numeroNota": "ENTRADA-1750705089316",
+      "empresaId": "almoxarifado",
+      "data": "2025-06-23T18:58:09.316Z",
+      "responsavel": "Rasdf",
+      "motivo": "Compra",
+      "status": "processada",
+      "observacoes": "",
+      "itens": [
+        {
+          "id": "item_1750705089316_lbvw9",
+          "tipoEPIId": "tipo_1750704713192",
+          "quantidade": 10,
+          "custoUnitario": 0,
+          "lote": "",
+          "observacoes": ""
+        },
+        {
+          "id": "item_1750705089316_4yu3l",
+          "tipoEPIId": "epi_005",
+          "quantidade": 1,
+          "custoUnitario": 0,
+          "lote": "",
+          "observacoes": ""
+        }
+      ],
+      "fornecedor": "Teste",
+      "notaFiscal": "234234234",
+      "valorTotal": 0,
+      "dataProcessamento": "2025-06-23T18:58:09.335Z"
     }
   ],
-  "notasSaida": [],
+  "notasSaida": [
+    {
+      "id": "nota_saida_1750703127258",
+      "numeroNota": "SAIDA-1750703127258",
+      "empresaId": "almoxarifado",
+      "data": "2025-06-23T18:25:27.258Z",
+      "responsavel": "Rafael",
+      "motivo": "Descarte por vencimento",
+      "status": "processada",
+      "observacoes": "Teste",
+      "itens": [
+        {
+          "id": "item_1750703127258_43w3r",
+          "tipoEPIId": "epi_001",
+          "quantidade": 20,
+          "custoUnitario": 0,
+          "lote": "",
+          "observacoes": ""
+        }
+      ],
+      "destinatario": "Lixo",
+      "solicitante": "Gerente",
+      "dataProcessamento": "2025-06-23T18:25:27.277Z"
+    }
+  ],
   "tiposEPI": [
     {
       "id": "epi_001",
@@ -454,6 +853,26 @@
       "descricao": "Uma descricao simples",
       "fabricante": "LALALA",
       "categoria": "Proteção da Cabeça",
+      "vidaUtilDias": 365,
+      "foto": ""
+    },
+    {
+      "id": "tipo_1750702931580",
+      "numeroCA": "1230412345",
+      "nomeEquipamento": "Capacete teste 00001",
+      "descricao": "Descricao teste ",
+      "fabricante": "IronHead",
+      "categoria": "Proteção da Cabeça",
+      "vidaUtilDias": 365,
+      "foto": ""
+    },
+    {
+      "id": "tipo_1750704713192",
+      "numeroCA": "09876",
+      "nomeEquipamento": "Oculos Rayban",
+      "descricao": "",
+      "fabricante": "Rayban",
+      "categoria": "Proteção dos Olhos e Face",
       "vidaUtilDias": 365,
       "foto": ""
     }

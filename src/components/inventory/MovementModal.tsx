@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Button } from 'flowbite-react';
-import { ItemEstoque, TipoEPI, Empresa } from '../../types';
+import { ItemEstoque, TipoEPI } from '../../types';
 import MovementForm from './MovementForm';
 
 interface MovementFormData {

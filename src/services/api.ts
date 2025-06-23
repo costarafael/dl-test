@@ -423,6 +423,10 @@ export const operacoesAPI = {
       const ficha = await fichasEPIAPI.getById(dadosEntrega.fichaEPIId);
       const colaborador = await colaboradoresAPI.getById(ficha.colaboradorId);
       
+      if (!colaborador) {
+        throw new Error('Colaborador não encontrado');
+      }
+      
       // 1. Criar a entrega
       const entrega = await entregasAPI.create({
         id: `entrega_${Date.now()}`,
@@ -511,13 +515,17 @@ export const operacoesAPI = {
       const ficha = await fichasEPIAPI.getById(entregaAtual.fichaEPIId);
       const colaborador = await colaboradoresAPI.getById(ficha.colaboradorId);
       
+      if (!colaborador) {
+        throw new Error('Colaborador não encontrado');
+      }
+      
       // 2. Preparar dados para comparação do estoque
-      const itensAntigos = entregaAtual.itens.map(item => ({
+      const itensAntigos = entregaAtual.itens.map((item: any) => ({
         tipoEPIId: item.tipoEPIId,
         quantidade: item.quantidade
       }));
       
-      const itensNovosParaEstoque = novosItens.map(item => ({
+      const itensNovosParaEstoque = novosItens.map((item: any) => ({
         tipoEPIId: item.tipoEPIId,
         quantidade: item.quantidade
       }));
@@ -527,7 +535,6 @@ export const operacoesAPI = {
         const { processarEdicaoEntregaEstoque } = await import('../utils/estoqueHelpers');
         const resultadoEstoque = await processarEdicaoEntregaEstoque(
           entregaId,
-          entregaAtual.fichaEPIId,
           itensAntigos,
           itensNovosParaEstoque,
           ficha.empresaId,
@@ -554,10 +561,10 @@ export const operacoesAPI = {
       });
 
       // 5. Remover itens antigos da ficha que pertencem a esta entrega
-      const itensFichaRestantes = ficha.itens.filter(item => item.entregaId !== entregaId);
+      const itensFichaRestantes = ficha.itens.filter((item: any) => item.entregaId !== entregaId);
       
       // 6. Adicionar novos itens à ficha
-      const novosItensFicha = novosItens.map(item => ({
+      const novosItensFicha = novosItens.map((item: any) => ({
         id: `ficha_edit_${item.id}`,
         tipoEPIId: item.tipoEPIId,
         quantidade: item.quantidade,
@@ -604,7 +611,7 @@ export const operacoesAPI = {
       const ficha = await fichasEPIAPI.getById(entrega.fichaEPIId);
       
       // 2. Remover itens da ficha que pertencem a esta entrega
-      const itensFichaRestantes = ficha.itens.filter(item => item.entregaId !== entregaId);
+      const itensFichaRestantes = ficha.itens.filter((item: any) => item.entregaId !== entregaId);
       
       // 3. Atualizar a ficha
       await fichasEPIAPI.update(entrega.fichaEPIId, {
@@ -622,8 +629,8 @@ export const operacoesAPI = {
         data: new Date().toISOString(),
         detalhes: {
           entregaId: entregaId,
-          equipamentos: entrega.itens.map(item => item.tipoEPIId),
-          quantidades: entrega.itens.map(item => item.quantidade)
+          equipamentos: entrega.itens.map((item: any) => item.tipoEPIId),
+          quantidades: entrega.itens.map((item: any) => item.quantidade)
         }
       });
 
@@ -648,12 +655,16 @@ export const operacoesAPI = {
       const ficha = await fichasEPIAPI.getById(dadosDevolucao.fichaEPIId);
       const colaborador = await colaboradoresAPI.getById(ficha.colaboradorId);
       
+      if (!colaborador) {
+        throw new Error('Colaborador não encontrado');
+      }
+      
       // 1. Processar devolução no estoque automaticamente
       try {
         const { processarDevolucaoEstoque } = await import('../utils/estoqueHelpers');
         const resultadoEstoque = await processarDevolucaoEstoque(
           dadosDevolucao.fichaEPIId,
-          dadosDevolucao.itens.map(item => ({
+          dadosDevolucao.itens.map((item: any) => ({
             tipoEPIId: item.tipoEPIId,
             quantidade: item.quantidade,
             motivo: item.motivo
@@ -674,7 +685,7 @@ export const operacoesAPI = {
       }
       
       // 2. Atualizar status dos itens na ficha
-      const itensAtualizados = ficha.itens.map(item => {
+      const itensAtualizados = ficha.itens.map((item: any) => {
         const itemDevolucao = dadosDevolucao.itens.find(dev => dev.id === item.id);
         if (itemDevolucao) {
           return {

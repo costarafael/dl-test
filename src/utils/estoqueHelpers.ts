@@ -104,8 +104,7 @@ export const processarEntregaEstoque = async (
               motivo: 'Entrega para colaborador',
               entregaId,
               fichaEPIId,
-              colaboradorNome,
-              empresaColaborador: empresaId // Para rastreabilidade
+              colaboradorNome
             }
           )
         );
@@ -142,10 +141,9 @@ export const processarEntregaEstoque = async (
 // Função para processar edição de entrega e ajustar estoque
 export const processarEdicaoEntregaEstoque = async (
   entregaId: string,
-  fichaEPIId: string,
   itensAntigos: Array<{ tipoEPIId: string; quantidade: number }>,
   itensNovos: Array<{ tipoEPIId: string; quantidade: number }>,
-  empresaId: string,
+  _empresaId: string,
   colaboradorNome: string,
   responsavel: string
 ): Promise<{ sucesso: boolean; ajustes: any[]; erros: string[] }> => {
@@ -221,9 +219,7 @@ export const processarEdicaoEntregaEstoque = async (
               {
                 motivo: 'Edição de entrega - quantidade aumentada',
                 entregaId,
-                colaboradorNome,
-                empresaId,
-                tipoOperacao: 'edicao_entrega_aumento'
+                colaboradorNome
               }
             )
           );
@@ -256,11 +252,7 @@ export const processarEdicaoEntregaEstoque = async (
               quantidadeRetorno,
               responsavel,
               {
-                motivo: 'Edição de entrega - quantidade diminuída',
-                entregaId,
-                colaboradorNome,
-                empresaId,
-                tipoOperacao: 'edicao_entrega_diminuicao'
+                motivo: 'Edição de entrega - quantidade diminuída'
               }
             )
           );
@@ -330,7 +322,7 @@ export const verificarAlertasEstoque = async (): Promise<{
 
 // Função para processar devolução e aumentar estoque centralizado automaticamente
 export const processarDevolucaoEstoque = async (
-  fichaEPIId: string,
+  _fichaEPIId: string,
   itensDevolucao: Array<{ tipoEPIId: string; quantidade: number; motivo?: string }>,
   empresaId: string, // Mantido para referência do colaborador, mas não afeta estoque
   colaboradorNome: string,
@@ -379,24 +371,18 @@ export const processarDevolucaoEstoque = async (
         });
         
         // Registrar evento no histórico de estoque
-        await registrarEventoEstoque({
-          id: `hist_est_dev_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
-          itemEstoqueId: itemEstoque.id,
-          tipo: 'devolucao',
-          responsavel,
-          descricao: `Devolução de ${tipoEPI.nomeEquipamento} por ${colaboradorNome}`,
-          quantidadeAnterior: itemEstoque.quantidade,
-          quantidadeAtual: itemEstoque.quantidade + itemDevolucao.quantidade,
-          quantidade: itemDevolucao.quantidade,
-          data: new Date().toISOString(),
-          detalhes: {
-            motivo: itemDevolucao.motivo || 'Devolução de colaborador',
-            fichaEPIId,
-            colaboradorNome,
-            tipoEPI: tipoEPI.nomeEquipamento,
-            empresaColaborador: empresaId // Para rastreabilidade
-          }
-        });
+        await registrarEventoEstoque(
+          criarEventoEntrada(
+            itemEstoque.id,
+            tipoEPI.nomeEquipamento,
+            itemEstoque.quantidade,
+            itemDevolucao.quantidade,
+            responsavel,
+            {
+              motivo: itemDevolucao.motivo || 'Devolução de colaborador'
+            }
+          )
+        );
         
         itensProcessados.push({
           itemEstoqueId: itemEstoque.id,

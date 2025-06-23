@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { FichaEPI, Colaborador, Empresa, TipoEPI, Entrega, ItemEntrega } from '../types';
-import { operacoesAPI, fichasEPIAPI, entregasAPI } from '../services/api';
+import { FichaEPI, Colaborador, Empresa, Entrega, ItemEntrega } from '../types';
+import { operacoesAPI, entregasAPI } from '../services/api';
 import { useAPI } from './useAPI';
 
 interface UseFichaDataResult {
@@ -45,8 +45,8 @@ export const useFichaData = (fichaId: string): UseFichaDataResult => {
       const dadosCompletos = await operacoesAPI.getFichaCompleta(fichaId);
       
       setFichaAtual(dadosCompletos.ficha);
-      setColaborador(dadosCompletos.colaborador);
-      setEmpresa(dadosCompletos.empresa);
+      setColaborador(dadosCompletos.colaborador || null);
+      setEmpresa(dadosCompletos.empresa || null);
       
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Erro ao carregar dados da ficha';

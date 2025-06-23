@@ -67,11 +67,9 @@ const FichaEPIDetalhes: React.FC = () => {
     loading,
     error,
     entregas,
-    entregasLoading,
     criarEntrega,
     atualizarEntrega,
     excluirEntrega,
-    recarregarDados
   } = useFichaData(id || '');
 
   // Dados auxiliares
@@ -81,8 +79,8 @@ const FichaEPIDetalhes: React.FC = () => {
   );
 
   // Helpers
-  const getTipoEPI = (id: string) => {
-    return tiposEPI?.find(tipo => tipo.id === id);
+  const getTipoEPI = (tipo: string) => {
+    return tiposEPI?.find((t: any) => t.id === tipo);
   };
 
   // Se não tem ID, redirecionar

@@ -18,6 +18,7 @@ interface SearchableDropdownProps {
   sizing?: 'sm' | 'md' | 'lg';
   className?: string;
   showSubtitle?: boolean;
+  disabled?: boolean;
 }
 
 const SearchableDropdown: React.FC<SearchableDropdownProps> = ({
@@ -29,7 +30,8 @@ const SearchableDropdown: React.FC<SearchableDropdownProps> = ({
   allOptionsLabel = "Todos",
   sizing = "sm",
   className = "",
-  showSubtitle = false
+  showSubtitle = false,
+  disabled = false
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -67,13 +69,14 @@ const SearchableDropdown: React.FC<SearchableDropdownProps> = ({
         color="light"
         sizing={sizing}
         className="rounded-sm w-full justify-between"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => !disabled && setIsOpen(!isOpen)}
+        disabled={disabled}
       >
         <span className="text-left truncate">{displayText}</span>
         <ChevronDownIcon className={`w-4 h-4 ml-2 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </Button>
 
-      {isOpen && (
+      {isOpen && !disabled && (
         <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-sm shadow-lg dark:bg-gray-700 dark:border-gray-600">
           <div className="p-3 border-b border-gray-200 dark:border-gray-600">
             <div className="relative">

@@ -3,7 +3,6 @@ import { Modal, Button, Badge } from 'flowbite-react';
 import { ItemEstoque, TipoEPI, EventoEstoque } from '../../types';
 import { formatarData } from '../../utils/dateHelpers';
 import { historicoEstoqueAPI } from '../../services/api';
-import { formatarHistoricoMovimentacao } from '../../utils/estoqueHelpers';
 
 interface HistoryModalProps {
   show: boolean;
@@ -60,7 +59,7 @@ const HistoryModal: React.FC<HistoryModalProps> = ({
     
     try {
       const eventos = await historicoEstoqueAPI.getByItem(item.id);
-      setHistorico(eventos.sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime()));
+      setHistorico(eventos.sort((a: EventoEstoque, b: EventoEstoque) => new Date(b.data).getTime() - new Date(a.data).getTime()));
     } catch (error) {
       console.error('Erro ao buscar histórico:', error);
       setError('Erro ao carregar histórico de movimentações');
@@ -171,9 +170,6 @@ const HistoryModal: React.FC<HistoryModalProps> = ({
                           )}
                           {evento.detalhes.colaboradorNome && (
                             <p><strong>Colaborador:</strong> {evento.detalhes.colaboradorNome}</p>
-                          )}
-                          {evento.detalhes.empresaNome && (
-                            <p><strong>Empresa:</strong> {evento.detalhes.empresaNome}</p>
                           )}
                         </div>
                       </div>

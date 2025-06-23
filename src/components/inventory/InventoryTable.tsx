@@ -56,7 +56,7 @@ const InventoryTable: React.FC<InventoryTableProps> = ({
               const tipoEPI = getTipoEPI(item.tipoEPIId);
               const status = calcularStatusEstoque(item);
               const statusInfo = getStatusInfo(status);
-              const proximoVencimento = isProximoVencimento(item.dataValidade);
+              const proximoVencimento = isProximoVencimento(item);
               
               return (
                 <Table.Row 

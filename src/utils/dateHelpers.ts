@@ -1,4 +1,4 @@
-import { format, differenceInDays, isAfter, isBefore, parseISO } from 'date-fns';
+import { format, differenceInDays, isAfter, isBefore } from 'date-fns';
 
 // Formatar data no padrão brasileiro
 export const formatarData = (data: Date | string | null | undefined, defaultValue = ''): string => {
@@ -44,7 +44,7 @@ export const isDataVencida = (dataValidade: Date | string | null | undefined): b
   if (!dataValidade) return false;
   
   try {
-    const date = typeof dataValidade === 'string' ? parseISO(dataValidade) : dataValidade;
+    const date = typeof dataValidade === 'string' ? new Date(dataValidade) : dataValidade;
     return isBefore(date, new Date());
   } catch (error) {
     console.warn('Erro ao verificar vencimento:', dataValidade, error);
@@ -57,7 +57,7 @@ export const isProximoVencimento = (dataValidade: Date | string | null | undefin
   if (!dataValidade) return false;
   
   try {
-    const date = typeof dataValidade === 'string' ? parseISO(dataValidade) : dataValidade;
+    const date = typeof dataValidade === 'string' ? new Date(dataValidade) : dataValidade;
     const hoje = new Date();
     const diasParaVencer = differenceInDays(date, hoje);
     
@@ -73,7 +73,7 @@ export const diasParaVencimento = (dataValidade: Date | string | null | undefine
   if (!dataValidade) return 0;
   
   try {
-    const date = typeof dataValidade === 'string' ? parseISO(dataValidade) : dataValidade;
+    const date = typeof dataValidade === 'string' ? new Date(dataValidade) : dataValidade;
     return Math.max(0, differenceInDays(date, new Date()));
   } catch (error) {
     console.warn('Erro ao calcular dias para vencimento:', dataValidade, error);
@@ -86,7 +86,7 @@ export const calcularIdadeDias = (dataInicio: Date | string | null | undefined):
   if (!dataInicio) return 0;
   
   try {
-    const date = typeof dataInicio === 'string' ? parseISO(dataInicio) : dataInicio;
+    const date = typeof dataInicio === 'string' ? new Date(dataInicio) : dataInicio;
     return differenceInDays(new Date(), date);
   } catch (error) {
     console.warn('Erro ao calcular idade em dias:', dataInicio, error);
@@ -124,8 +124,8 @@ export const isDataNoPeriodo = (
   
   try {
     const date = typeof data === 'string' ? new Date(data) : data;
-    const inicio = typeof dataInicio === 'string' ? parseISO(dataInicio) : dataInicio;
-    const fim = typeof dataFim === 'string' ? parseISO(dataFim) : dataFim;
+    const inicio = typeof dataInicio === 'string' ? new Date(dataInicio) : dataInicio;
+    const fim = typeof dataFim === 'string' ? new Date(dataFim) : dataFim;
     
     return !isBefore(date, inicio) && !isAfter(date, fim);
   } catch (error) {

@@ -1,5 +1,4 @@
 import { FichaEPI, Entrega, EventoHistorico } from '../types';
-import { formatarData } from './dateHelpers';
 
 // Contar itens entregues na ficha
 export const contarItensEntregues = (ficha: FichaEPI | null): number => {

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Card, Tabs, Badge, Button, Table, TextInput, Select } from 'flowbite-react';
 import { PlusIcon, MagnifyingGlassIcon, PencilIcon, EyeIcon } from '@heroicons/react/24/outline';
-import { NotaEntrada, NotaSaida, TipoEPI } from '../types';
+import { NotaEntrada, NotaSaida } from '../types';
 import { useAPI } from '../hooks/useAPI';
 import { notasEntradaAPI, notasSaidaAPI, tiposEPIAPI, estoqueAPI, movimentacaoNotasAPI } from '../services/api';
-import { formatarData, formatarDataHora } from '../utils/dateHelpers';
-import { createEntityLookup } from '../utils/entityHelpers';
+import { formatarData } from '../utils/dateHelpers';
 import NewMovementModal from '../components/inventory/NewMovementModal';
 
 const MovimentacoesEstoque: React.FC = () => {
@@ -13,8 +12,6 @@ const MovimentacoesEstoque: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<'todos' | 'pendente' | 'processada' | 'cancelada'>('todos');
   const [showNewModal, setShowNewModal] = useState(false);
-  const [selectedNote, setSelectedNote] = useState<NotaEntrada | NotaSaida | null>(null);
-  const [showEditModal, setShowEditModal] = useState(false);
 
   // Carregar dados
   const { data: notasEntrada = [], loading: loadingEntradas, refetch: refetchEntradas } = useAPI(notasEntradaAPI.getAll);
@@ -22,7 +19,6 @@ const MovimentacoesEstoque: React.FC = () => {
   const { data: tiposEPI = [], loading: loadingTipos } = useAPI(tiposEPIAPI.getAll);
   const { data: estoque = [] } = useAPI(estoqueAPI.getAll);
 
-  const getTipoEPI = createEntityLookup(tiposEPI);
 
   const isLoading = loadingEntradas || loadingSaidas || loadingTipos;
 
@@ -71,12 +67,12 @@ const MovimentacoesEstoque: React.FC = () => {
   };
 
   const handleEditNote = (nota: NotaEntrada | NotaSaida) => {
-    setSelectedNote(nota);
-    setShowEditModal(true);
+    console.log('Edit note:', nota);
+    // TODO: Implementar modal de edição
   };
 
   const handleViewNote = (nota: NotaEntrada | NotaSaida) => {
-    setSelectedNote(nota);
+    console.log('View note:', nota);
     // TODO: Implementar modal de visualização
   };
 

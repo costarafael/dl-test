@@ -443,7 +443,8 @@ const gerarFichasEPI = (): FichaEPI[] => {
           quantidade: 1,
           dataEntrega: '2023-12-01',
           dataValidade: '2024-12-01',
-          status: 'entregue'
+          status: 'entregue',
+          entregaId: 'entrega_1'
         }
       ]
     }
@@ -529,6 +530,8 @@ export const movimentacoesEstoque: MovimentacaoEstoque[] = [
     tipo: 'entrada',
     itemEstoqueId: estoque[0].id,
     quantidade: 100,
+    quantidadeAnterior: 0,
+    quantidadeAtual: 100,
     data: '2023-10-01',
     responsavelId: colaboradores[0].id,
     motivo: 'Compra inicial de capacetes',
@@ -539,6 +542,8 @@ export const movimentacoesEstoque: MovimentacaoEstoque[] = [
     tipo: 'saida',
     itemEstoqueId: estoque[0].id,
     quantidade: 50,
+    quantidadeAnterior: 100,
+    quantidadeAtual: 50,
     data: '2023-10-15',
     responsavelId: colaboradores[1].id,
     motivo: 'Entrega para colaboradores'
@@ -548,6 +553,8 @@ export const movimentacoesEstoque: MovimentacaoEstoque[] = [
     tipo: 'entrada',
     itemEstoqueId: estoque[1].id,
     quantidade: 500,
+    quantidadeAnterior: 0,
+    quantidadeAtual: 500,
     data: '2023-09-20',
     responsavelId: colaboradores[0].id,
     motivo: 'Estoque de luvas',

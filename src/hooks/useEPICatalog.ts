@@ -81,7 +81,7 @@ export const useEPICatalog = (): UseEPICatalogResult => {
   const itemsPerPage = 10;
 
   // Filtrar e processar dados
-  const { items: tiposFiltrados } = processEntities(tiposEPI, {
+  const { items: tiposFiltrados } = processEntities(tiposEPI || [], {
     filters: { categoria: filtroCategoria },
     searchTerm,
     searchFields: ['nomeEquipamento', 'numeroCA', 'fabricante'],

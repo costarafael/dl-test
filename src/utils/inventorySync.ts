@@ -1,5 +1,5 @@
-import { ItemEstoque, TipoEPI, Empresa } from '../types';
-import { estoqueAPI, tiposEPIAPI, empresasAPI } from '../services/api';
+import { ItemEstoque, TipoEPI } from '../types';
+import { estoqueAPI, tiposEPIAPI } from '../services/api';
 import { registrarEventoEstoque, criarEventoCadastroItem } from './estoqueHelpers';
 
 /**
@@ -29,7 +29,7 @@ export const sincronizarCatalogoComEstoque = async (): Promise<{
     for (const tipoEPI of tiposEPI) {
       try {
         // Verificar se já existe item de estoque para este tipo (estoque único, sem empresa)
-        const itemExistente = itensEstoque.find(item => item.tipoEPIId === tipoEPI.id);
+        const itemExistente = itensEstoque.find((item: any) => item.tipoEPIId === tipoEPI.id);
 
         if (!itemExistente) {
           // Criar item de estoque com quantidade zero no almoxarifado central
@@ -51,15 +51,10 @@ export const sincronizarCatalogoComEstoque = async (): Promise<{
           // Registrar evento de cadastro no histórico
           await registrarEventoEstoque(
             criarEventoCadastroItem(
-              itemCriado.id,
+              String(itemCriado.id),
               tipoEPI.nomeEquipamento,
-              'Sistema',
-              {
-                categoria: tipoEPI.categoria,
-                fabricante: tipoEPI.fabricante,
-                numeroCA: tipoEPI.numeroCA,
-                localizacao: 'Almoxarifado Central'
-              }
+              0,
+              'Sistema'
             )
           );
 
@@ -160,16 +155,10 @@ export const criarEstoqueParaNovoTipoEPI = async (tipoEPI: TipoEPI): Promise<{
       // Registrar evento de cadastro
       await registrarEventoEstoque(
         criarEventoCadastroItem(
-          itemCriado.id,
+          String(itemCriado.id),
           tipoEPI.nomeEquipamento,
-          'Sistema',
-          {
-            categoria: tipoEPI.categoria,
-            fabricante: tipoEPI.fabricante,
-            numeroCA: tipoEPI.numeroCA,
-            motivo: 'Novo tipo EPI cadastrado',
-            localizacao: 'Almoxarifado Central'
-          }
+          0,
+          'Sistema'
         )
       );
 
