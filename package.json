@@ -33,7 +33,8 @@
     "dev": "concurrently \"npm run db\" \"npm start\"",
     "dev-clean": "npx kill-port 3001 2>/dev/null; npm run dev",
     "generate-db": "node generate-db.js",
-    "check-server": "node check-server.js"
+    "check-server": "node check-server.js",
+    "server": "npx json-server db.json --host 0.0.0.0 --port ${PORT:-3001}"
   },
   "eslintConfig": {
     "extends": [
