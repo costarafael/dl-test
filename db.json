@@ -1,0 +1,461 @@
+{
+  "fichasEPI": [
+    {
+      "id": "nova_1750673896608",
+      "colaboradorId": "1",
+      "empresaId": "1",
+      "dataEmissao": "2025-06-23T10:18:16.608Z",
+      "dataValidade": "2026-06-23T10:18:16.608Z",
+      "status": "ativo",
+      "itens": [
+        {
+          "id": "ficha_edit_epi_1750673900974_h8k38",
+          "tipoEPIId": "epi_002",
+          "quantidade": 20,
+          "dataEntrega": "2025-06-23T12:29:07.696Z",
+          "dataValidade": "2026-06-23T03:00:00.000Z",
+          "status": "entregue",
+          "entregaId": "entrega_1750673906924",
+          "observacoes": "Entrega #entrega_1750673906924 (editada)"
+        }
+      ]
+    },
+    {
+      "id": "nova_1750678595541",
+      "colaboradorId": "1",
+      "empresaId": "1",
+      "dataEmissao": "2025-06-23T11:36:35.541Z",
+      "dataValidade": "2026-06-23T11:36:35.541Z",
+      "status": "ativo",
+      "itens": [
+        {
+          "id": "ficha_epi_1750678602825_oxgky",
+          "tipoEPIId": "epi_005",
+          "quantidade": 1,
+          "dataEntrega": "2025-06-23T11:36:52.452Z",
+          "dataValidade": "2026-06-23T03:00:00.000Z",
+          "status": "entregue",
+          "entregaId": "entrega_1750678612452",
+          "observacoes": "Entrega #entrega_1750678612452"
+        }
+      ]
+    },
+    {
+      "id": "nova_1750699663254",
+      "colaboradorId": "8",
+      "empresaId": "1",
+      "dataEmissao": "2025-06-23T17:27:43.254Z",
+      "dataValidade": "2026-06-23T17:27:43.254Z",
+      "status": "ativo",
+      "itens": []
+    }
+  ],
+  "entregas": [
+    {
+      "id": "entrega_1750673906924",
+      "fichaEPIId": "nova_1750673896608",
+      "dataEntrega": "2025-06-23T12:29:07.696Z",
+      "itens": [
+        {
+          "id": "epi_1750673900974_h8k38",
+          "tipoEPIId": "epi_002",
+          "quantidade": 20,
+          "dataValidade": "2026-06-23T03:00:00.000Z"
+        }
+      ],
+      "responsavel": "Supervisor EPI",
+      "status": "nao_assinado",
+      "qrCode": "QR_1750673906924",
+      "linkAssinatura": "https://app.datalife.com/assinatura/1750673906924"
+    },
+    {
+      "id": "entrega_1750678612452",
+      "fichaEPIId": "nova_1750678595541",
+      "dataEntrega": "2025-06-23T11:36:52.452Z",
+      "itens": [
+        {
+          "id": "epi_1750678602825_oxgky",
+          "tipoEPIId": "epi_005",
+          "quantidade": 1,
+          "dataValidade": "2026-06-23T03:00:00.000Z"
+        }
+      ],
+      "responsavel": "Supervisor EPI",
+      "status": "nao_assinado",
+      "qrCode": "QR_1750678612452",
+      "linkAssinatura": "https://app.datalife.com/assinatura/1750678612452"
+    }
+  ],
+  "estoque": [
+    {
+      "id": "estoque_almox_epi_001",
+      "tipoEPIId": "epi_001",
+      "empresaId": "almoxarifado",
+      "quantidade": 50,
+      "quantidadeMinima": 10,
+      "localizacao": "Almoxarifado Central",
+      "lote": "LOTE-001-2025",
+      "dataValidade": "2027-12-31"
+    },
+    {
+      "id": "estoque_almox_epi_002",
+      "tipoEPIId": "epi_002",
+      "empresaId": "almoxarifado",
+      "quantidade": -970,
+      "quantidadeMinima": 20,
+      "localizacao": "Almoxarifado Central",
+      "lote": "LOTE-002-2025",
+      "dataValidade": "2026-12-31"
+    },
+    {
+      "id": "estoque_almox_epi_003",
+      "tipoEPIId": "epi_003",
+      "empresaId": "almoxarifado",
+      "quantidade": 100,
+      "quantidadeMinima": 50,
+      "localizacao": "Almoxarifado Central",
+      "lote": "LOTE-003-2025",
+      "dataValidade": "2025-12-31"
+    },
+    {
+      "id": "estoque_almox_epi_004",
+      "tipoEPIId": "epi_004",
+      "empresaId": "almoxarifado",
+      "quantidade": 200,
+      "quantidadeMinima": 100,
+      "localizacao": "Almoxarifado Central",
+      "lote": "LOTE-004-2025",
+      "dataValidade": "2025-07-31"
+    },
+    {
+      "id": "estoque_almox_epi_005",
+      "tipoEPIId": "epi_005",
+      "empresaId": "almoxarifado",
+      "quantidade": 39,
+      "quantidadeMinima": 20,
+      "localizacao": "Almoxarifado Central",
+      "lote": "LOTE-005-2025",
+      "dataValidade": "2026-06-30"
+    },
+    {
+      "id": "estoque_1750673938869_tipo_1750673938857",
+      "tipoEPIId": "tipo_1750673938857",
+      "empresaId": "almoxarifado",
+      "quantidade": 0,
+      "quantidadeMinima": 10,
+      "localizacao": "Almoxarifado Central",
+      "lote": "LOTE-1750673938869-zmm74",
+      "dataValidade": "2027-06-23"
+    },
+    {
+      "id": "estoque_1750675828432_tipo_1750675828418",
+      "tipoEPIId": "tipo_1750675828418",
+      "empresaId": "almoxarifado",
+      "quantidade": 0,
+      "quantidadeMinima": 10,
+      "localizacao": "Almoxarifado Central",
+      "lote": "LOTE-1750675828432-rh1cn",
+      "dataValidade": "2027-06-23"
+    }
+  ],
+  "movimentacoesEstoque": [
+    {
+      "id": "mov_1750673906949_qv5wc",
+      "itemEstoqueId": "estoque_almox_epi_002",
+      "tipo": "entrega",
+      "quantidade": 1000,
+      "quantidadeAnterior": 30,
+      "quantidadeAtual": -970,
+      "responsavelId": "Supervisor EPI",
+      "motivo": "Entrega para colaborador",
+      "data": "2025-06-23T10:18:26.949Z",
+      "observacoes": "Entrega para João Silva Santos (1)",
+      "entregaId": "entrega_1750673906924"
+    },
+    {
+      "id": "mov_1750678612474_1wofq",
+      "itemEstoqueId": "estoque_almox_epi_005",
+      "tipo": "entrega",
+      "quantidade": 1,
+      "quantidadeAnterior": 40,
+      "quantidadeAtual": 39,
+      "responsavelId": "Supervisor EPI",
+      "motivo": "Entrega para colaborador",
+      "data": "2025-06-23T11:36:52.474Z",
+      "observacoes": "Entrega para João Silva Santos (1)",
+      "entregaId": "entrega_1750678612452"
+    }
+  ],
+  "historicoEstoque": [
+    {
+      "id": "hist_est_1750673906954_6bozl",
+      "itemEstoqueId": "estoque_almox_epi_002",
+      "tipo": "entrega",
+      "responsavel": "Supervisor EPI",
+      "descricao": "Saída por entrega - Óculos de Proteção Ampla Visão",
+      "quantidadeAnterior": 30,
+      "quantidadeAtual": -970,
+      "quantidade": 1000,
+      "detalhes": {
+        "motivo": "Entrega para colaborador",
+        "entregaId": "entrega_1750673906924",
+        "fichaEPIId": "nova_1750673896608",
+        "colaboradorNome": "João Silva Santos",
+        "empresaColaborador": "1"
+      },
+      "data": "2025-06-23T10:18:26.954Z"
+    },
+    {
+      "id": "hist_est_1750673938877_whtkp",
+      "itemEstoqueId": "estoque_1750673938869_tipo_1750673938857",
+      "tipo": "cadastro",
+      "responsavel": {
+        "categoria": "Outros",
+        "fabricante": "LALALA",
+        "numeroCA": "123123",
+        "motivo": "Novo tipo EPI cadastrado",
+        "localizacao": "Almoxarifado Central"
+      },
+      "descricao": "Item de estoque criado - EPI DE TESTE",
+      "quantidadeAnterior": 0,
+      "quantidadeAtual": "Sistema",
+      "quantidade": "Sistema",
+      "detalhes": {
+        "motivo": "Cadastro inicial do item no sistema"
+      },
+      "data": "2025-06-23T10:18:58.877Z"
+    },
+    {
+      "id": "hist_est_1750675828442_z4ghn",
+      "itemEstoqueId": "estoque_1750675828432_tipo_1750675828418",
+      "tipo": "cadastro",
+      "responsavel": {
+        "categoria": "Proteção da Cabeça",
+        "fabricante": "LALALA",
+        "numeroCA": "12345",
+        "motivo": "Novo tipo EPI cadastrado",
+        "localizacao": "Almoxarifado Central"
+      },
+      "descricao": "Item de estoque criado - Capacete LALA",
+      "quantidadeAnterior": 0,
+      "quantidadeAtual": "Sistema",
+      "quantidade": "Sistema",
+      "detalhes": {
+        "motivo": "Cadastro inicial do item no sistema"
+      },
+      "data": "2025-06-23T10:50:28.442Z"
+    },
+    {
+      "id": "hist_est_1750678612479_si27w",
+      "itemEstoqueId": "estoque_almox_epi_005",
+      "tipo": "entrega",
+      "responsavel": "Supervisor EPI",
+      "descricao": "Saída por entrega - Luvas de Segurança Vaqueta",
+      "quantidadeAnterior": 40,
+      "quantidadeAtual": 39,
+      "quantidade": 1,
+      "detalhes": {
+        "motivo": "Entrega para colaborador",
+        "entregaId": "entrega_1750678612452",
+        "fichaEPIId": "nova_1750678595541",
+        "colaboradorNome": "João Silva Santos",
+        "empresaColaborador": "1"
+      },
+      "data": "2025-06-23T11:36:52.479Z"
+    }
+  ],
+  "historico": [
+    {
+      "id": "hist_1750673896626_ftl3d",
+      "fichaEPIId": "nova_1750673896608",
+      "tipo": "ficha_criada",
+      "responsavel": "Sistema EPI",
+      "descricao": "Ficha de EPI criada para o colaborador João Silva Santos",
+      "data": "2025-06-23T10:18:16.626Z"
+    },
+    {
+      "id": "hist_1750673906963_ti30b",
+      "fichaEPIId": "nova_1750673896608",
+      "tipo": "entrega_criada",
+      "responsavel": "Supervisor EPI",
+      "descricao": "Entrega #entrega_1750673906924 criada com 1 item(ns)",
+      "data": "2025-06-23T10:18:26.963Z",
+      "detalhes": {
+        "entregaId": "entrega_1750673906924",
+        "equipamentos": [
+          "epi_002"
+        ],
+        "quantidades": [
+          1000
+        ]
+      }
+    },
+    {
+      "id": "hist_1750678595559_3lnua",
+      "fichaEPIId": "nova_1750678595541",
+      "tipo": "ficha_criada",
+      "responsavel": "Sistema EPI",
+      "descricao": "Ficha de EPI criada para o colaborador João Silva Santos",
+      "data": "2025-06-23T11:36:35.559Z"
+    },
+    {
+      "id": "hist_1750678612488_5z19p",
+      "fichaEPIId": "nova_1750678595541",
+      "tipo": "entrega_criada",
+      "responsavel": "Supervisor EPI",
+      "descricao": "Entrega #entrega_1750678612452 criada com 1 item(ns)",
+      "data": "2025-06-23T11:36:52.488Z",
+      "detalhes": {
+        "entregaId": "entrega_1750678612452",
+        "equipamentos": [
+          "epi_005"
+        ],
+        "quantidades": [
+          1
+        ]
+      }
+    },
+    {
+      "id": "hist_1750681425029_es4ma",
+      "fichaEPIId": "nova_1750673896608",
+      "tipo": "entrega_editada",
+      "responsavel": "Supervisor EPI",
+      "descricao": "Entrega #entrega_1750673906924 editada - 1 item(ns)",
+      "data": "2025-06-23T12:23:45.029Z",
+      "detalhes": {
+        "entregaId": "entrega_1750673906924",
+        "equipamentos": [
+          "epi_002"
+        ],
+        "quantidades": [
+          2
+        ]
+      }
+    },
+    {
+      "id": "hist_1750681747706_kpra9",
+      "fichaEPIId": "nova_1750673896608",
+      "tipo": "entrega_editada",
+      "responsavel": "Supervisor EPI",
+      "descricao": "Entrega #entrega_1750673906924 editada - 1 item(ns)",
+      "data": "2025-06-23T12:29:07.706Z",
+      "detalhes": {
+        "entregaId": "entrega_1750673906924",
+        "equipamentos": [
+          "epi_002"
+        ],
+        "quantidades": [
+          20
+        ]
+      }
+    },
+    {
+      "id": "hist_1750699663275_jcs75",
+      "fichaEPIId": "nova_1750699663254",
+      "tipo": "ficha_criada",
+      "responsavel": "Sistema EPI",
+      "descricao": "Ficha de EPI criada para o colaborador Juliana Pereira Lima",
+      "data": "2025-06-23T17:27:43.275Z"
+    }
+  ],
+  "notificacoes": [],
+  "notasEntrada": [
+    {
+      "id": "nota_entrada_1750700623554",
+      "numeroNota": "ENTRADA-1750700623554",
+      "empresaId": "almoxarifado",
+      "data": "2025-06-23T17:43:43.554Z",
+      "responsavel": "Teste",
+      "motivo": "Compra",
+      "status": "processada",
+      "observacoes": "Obs geral",
+      "itens": [
+        {
+          "id": "item_1750700623554_bi7id",
+          "tipoEPIId": "epi_002",
+          "quantidade": 12,
+          "custoUnitario": 0,
+          "lote": "",
+          "observacoes": ""
+        }
+      ],
+      "fornecedor": "Teste",
+      "notaFiscal": "1123123",
+      "valorTotal": 0,
+      "dataProcessamento": "2025-06-23T17:43:43.579Z"
+    }
+  ],
+  "notasSaida": [],
+  "tiposEPI": [
+    {
+      "id": "epi_001",
+      "numeroCA": "12345",
+      "nomeEquipamento": "Capacete de Segurança Classe A",
+      "descricao": "Capacete para proteção contra impactos e choques elétricos",
+      "fabricante": "3M do Brasil",
+      "categoria": "Proteção da Cabeça",
+      "vidaUtilDias": 1095,
+      "foto": ""
+    },
+    {
+      "id": "epi_002",
+      "numeroCA": "23456",
+      "nomeEquipamento": "Óculos de Proteção Ampla Visão",
+      "descricao": "Óculos com proteção lateral e antiembaçante",
+      "fabricante": "Honeywell",
+      "categoria": "Proteção dos Olhos e Face",
+      "vidaUtilDias": 730,
+      "foto": ""
+    },
+    {
+      "id": "epi_003",
+      "numeroCA": "34567",
+      "nomeEquipamento": "Protetor Auricular Tipo Plug",
+      "descricao": "Protetor auricular de inserção com cordão",
+      "fabricante": "EAR",
+      "categoria": "Proteção Auditiva",
+      "vidaUtilDias": 30,
+      "foto": ""
+    },
+    {
+      "id": "epi_004",
+      "numeroCA": "45678",
+      "nomeEquipamento": "Respirador PFF2",
+      "descricao": "Respirador descartável contra poeiras e névoas",
+      "fabricante": "3M do Brasil",
+      "categoria": "Proteção Respiratória",
+      "vidaUtilDias": 1,
+      "foto": ""
+    },
+    {
+      "id": "epi_005",
+      "numeroCA": "56789",
+      "nomeEquipamento": "Luvas de Segurança Vaqueta",
+      "descricao": "Luvas em couro para proteção das mãos",
+      "fabricante": "Kalipso",
+      "categoria": "Proteção das Mãos",
+      "vidaUtilDias": 180,
+      "foto": ""
+    },
+    {
+      "id": "tipo_1750673938857",
+      "numeroCA": "123123",
+      "nomeEquipamento": "EPI DE TESTE",
+      "descricao": "Teste apenas",
+      "fabricante": "LALALA",
+      "categoria": "Outros",
+      "vidaUtilDias": 365,
+      "foto": ""
+    },
+    {
+      "id": "tipo_1750675828418",
+      "numeroCA": "12345",
+      "nomeEquipamento": "Capacete LALA",
+      "descricao": "Uma descricao simples",
+      "fabricante": "LALALA",
+      "categoria": "Proteção da Cabeça",
+      "vidaUtilDias": 365,
+      "foto": ""
+    }
+  ]
+}
