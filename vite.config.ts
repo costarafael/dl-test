@@ -29,6 +29,8 @@ export default defineConfig(({ mode }) => {
       minify: 'esbuild',
       chunkSizeWarningLimit: 1600,
     },
+    // Base URL para GitHub Pages
+    base: process.env.NODE_ENV === 'production' ? '/dl-test/' : '/',
     // Configurações de CSS
     css: {
       modules: {

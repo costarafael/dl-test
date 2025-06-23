@@ -1,5 +1,7 @@
 // Serviços de API para JSON Server
-const API_BASE = 'http://localhost:3001';
+const API_BASE = process.env.NODE_ENV === 'production' 
+  ? 'https://epi-bk.onrender.com' 
+  : 'http://localhost:3001';
 
 // Helper para fazer requests
 const apiRequest = async (url: string, options?: RequestInit) => {
